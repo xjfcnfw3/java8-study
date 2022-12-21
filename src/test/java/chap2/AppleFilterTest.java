@@ -1,5 +1,6 @@
 package chap2;
 
+import chap2.other.Filter;
 import chap2.predicate.AppleGreenColorPredicate;
 import chap2.predicate.AppleHeavyWeightPredicate;
 import java.util.Arrays;
@@ -19,5 +20,12 @@ public class AppleFilterTest {
 
         System.out.println("greenApples = " + greenApples);
         System.out.println("heavyApples = " + heavyApples);
+    }
+
+    @Test
+    void otherPredicateTest() {
+        List<Integer> numbers = Arrays.asList(1, 150, 145, 24, 32);
+        List<Integer> result = Filter.filter(numbers, (Integer i ) -> i % 2 == 0);
+        System.out.println("result = " + result);
     }
 }
