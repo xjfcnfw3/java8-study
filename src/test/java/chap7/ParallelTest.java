@@ -4,6 +4,7 @@ import static java.util.stream.Collectors.reducing;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import chap3.function.Function;
+import java.util.stream.LongStream;
 import java.util.stream.Stream;
 import org.junit.jupiter.api.Test;
 
@@ -47,6 +48,18 @@ public class ParallelTest {
             measureSumPerf(ParallelTest::parallelSum, 10_000_000) + " msecs");
     }
 
+    @Test
+    void measureRangedSum() {
+        System.out.println("Ranged sum done in: " +
+            measureSumPerf(ParallelTest::rangedSum, 10_000_000) + " msecs");
+    }
+
+    @Test
+    void measureParallelRangedSum() {
+        System.out.println("Parallel sum done in: " +
+            measureSumPerf(ParallelTest::parallelRangedSum, 10_000_000) + " msecs");
+    }
+
     public static long iterativeSum(long n) {
         long result = 0;
         for (long i = 0; i <= n; i++) {
@@ -74,11 +87,21 @@ public class ParallelTest {
     }
 
 
-
     public static long parallelSum(long n) {
         return Stream.iterate(1L, i -> i + 1)
             .limit(n)
             .parallel()
             .reduce(0L, Long::sum);
+    }
+
+    public static long rangedSum(long n) {
+        return LongStream.rangeClosed(1, n)
+            .reduce(1L, Long::sum);
+    }
+
+    public static long parallelRangedSum(long n) {
+        return LongStream.rangeClosed(1, n)
+            .parallel()
+            .reduce(1L, Long::sum);
     }
 }
