@@ -4,6 +4,8 @@ import static java.util.stream.Collectors.reducing;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import chap3.function.Function;
+import java.util.concurrent.ForkJoinPool;
+import java.util.concurrent.ForkJoinTask;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
 import org.junit.jupiter.api.Test;
@@ -70,6 +72,12 @@ public class ParallelTest {
     void measureSideEffectParallelSum() {
         System.out.println("SideEffect parallel sum done in: " +
             measureSumPerf(ParallelTest::sideEffectParallelSum, 10_000_000) + " msecs");
+    }
+
+    @Test
+    void forkJoinSum() {
+        System.out.println("ForkJoin sum done in: " +
+            measureSumPerf(ForkJoinSumCalculator::forkJoinSum, 10_000_000) + " msecs");
     }
 
 
