@@ -3,10 +3,13 @@ package chap10;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
+import chap10.normal.Car;
+import chap10.normal.Insurance;
+import chap10.normal.Person;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class OptionalTest {
+public class NullTest {
 
     @DisplayName("getCarInsuranceNameV1에 null이 있으면 예외가 발생된다.")
     @Test

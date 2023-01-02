@@ -1,4 +1,4 @@
-package chap10;
+package chap10.normal;
 
 public class Car {
     private Insurance insurance;
