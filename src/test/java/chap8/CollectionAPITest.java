@@ -16,5 +16,4 @@ class CollectionAPITest {
             .isInstanceOf(UnsupportedOperationException.class);
 
     }
-
 }

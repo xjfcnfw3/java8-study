@@ -12,7 +12,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import chap4.Dish;
 import chap4.Dish.Type;
-import chap4.DishTest;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.IntSummaryStatistics;

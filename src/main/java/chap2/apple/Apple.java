@@ -1,4 +1,4 @@
-package chap2;
+package chap2.apple;
 
 public class Apple {
     private String color;

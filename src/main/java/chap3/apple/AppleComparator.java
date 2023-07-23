@@ -1,6 +1,6 @@
 package chap3.apple;
 
-import chap2.Apple;
+import chap2.apple.Apple;
 import java.util.Comparator;
 
 public class AppleComparator implements Comparator<Apple> {

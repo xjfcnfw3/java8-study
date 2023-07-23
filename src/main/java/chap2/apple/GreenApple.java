@@ -1,14 +1,14 @@
-package chap2;
+package chap2.apple;
 
-import chap2.predicate.ApplePredicate;
+import chap2.apple.Apple;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FilterApples {
-    public static List<Apple> filterApples(List<Apple> inventory, ApplePredicate p) {
+public class GreenApple {
+    public static List<Apple> filterGreenApples(List<Apple> inventory) {
         List<Apple> result = new ArrayList<>();
         for (Apple apple : inventory) {
-            if (p.test(apple)) {
+            if ("green".equals(apple.getColor())) {
                 result.add(apple);
             }
         }

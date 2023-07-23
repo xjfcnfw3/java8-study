@@ -1,8 +1,6 @@
 package chap3.apple;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import chap2.Apple;
+import chap2.apple.Apple;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
